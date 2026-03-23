@@ -1,0 +1,220 @@
+:root {
+  --bg-dark: #0A0F16;
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --cyan: #00E8FF;
+  --cyan-glow: rgba(0, 232, 255, 0.3);
+  --slate: #94A3B8;
+  --white: #F8FAFC;
+  --border: rgba(255, 255, 255, 0.1);
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.scanning-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanning-effect::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 15px var(--cyan);
+  animation: scan-line 3s linear infinite;
+  z-index: 10;
+}
+
+
+
+
+body { background: var(--bg-dark); color: var(--white); font-family: var(--font-main); margin: 0; }
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: var(--cyan); }
+.hero { display: flex; align-items: center; min-height: 100vh; padding: 0 10%; gap: 50px; }
+.hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-visual {
+    width: 100%;           /* Ensure container is full width */
+    max-width: 500px;      /* Or whatever size you currently have */
+    height: 500px;         /* Give it a fixed height */
+    overflow: hidden;      /* Prevents the image from leaking out */
+    border-radius: 20px;
+    border: 1px solid var(--cyan);
+}
+
+.hero-visual img {
+    width: 100%;           /* Force width to 100% of container */
+    height: 100%;          /* Force height to 100% of container */
+    object-fit: cover;     /* THIS IS THE KEY: It crops the image to fill the box perfectly without stretching */
+    display: block;
+}
+.btn-cyan { background: var(--cyan); color: var(--bg-dark); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn-cyan:hover { box-shadow: 0 0 20px var(--cyan); }
+
+/* REFINED NAVIGATION STYLES */
+a, a:link, a:visited {
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: inherit; /* Prevents browser purple/blue */
+}
+
+/* --- REFINED NAVBAR --- */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 5%;
+    background: rgba(10, 15, 22, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Specific styling for Top Nav links */
+.nav-links a:not(.btn-cyan) {
+    color: var(--slate) !important; /* Force Slate Gray */
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--cyan) !important;
+}/* --- UNIVERSAL LINK RESET (Add to top of CSS) --- */
+
+.auth-group {
+    display: flex;
+    align-items: center;
+    
+    /* ADD OR UPDATE THESE TWO LINES */
+    gap: 24px;          /* This creates the space between Login and the Button */
+    margin-left: 20px;   /* This creates space between API and Login */
+    
+    padding-left: 20px;
+    border-left: 1px solid var(--border); 
+}
+
+/* --- HERO SECTION LINK (How it Works) --- */
+.cta-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn-outline {
+    color: var(--white) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+}
+
+.btn-outline:hover {
+    color: var(--cyan) !important;
+    border-bottom: 1px solid var(--cyan);
+}
+
+/* --- THE AUTH BUTTON RE-FIX --- */
+.btn-cyan {
+    background: var(--cyan) !important;
+    color: #0A0F16 !important; /* Dark text for contrast */
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid var(--cyan);
+    display: inline-block;
+}
+
+.btn-cyan:hover {
+    background: transparent !important;
+    color: var(--cyan) !important;
+    box-shadow: 0 0 20px var(--cyan-glow);
+}
+
+/* FOOTER STYLES */
+footer {
+    background: #06090f;
+    padding: 4rem 10% 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a { color: var(--slate); text-decoration: none; font-size: 0.85rem; }
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--slate);
+}
+
+/* MOBILE FIX: Hides the menu icon on PC */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .mobile-toggle { display: block; }
+    .nav-links { display: none; } /* Standard menu hides on mobile */
+}
+
+
+.chat-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(0, 232, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.chat-widget:hover {
+    transform: scale(1.1) rotate(10deg);
+}

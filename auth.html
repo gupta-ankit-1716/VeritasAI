@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Terminal | VeritasAI</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="auth.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card glass">
+            <div class="auth-header">
+                <div class="logo">VERITAS<span>AI</span></div>
+                <h2 id="auth-title">Security Login</h2>
+                <p id="auth-subtitle">Initialize your forensic session.</p>
+            </div>
+
+            <form id="auth-form">
+                <div class="input-group" id="name-field" style="display: none;">
+                    <label>Personnel Name</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="user"></i>
+                        <input type="text" id="name" placeholder="Agent Name">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Institutional Email</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="email" placeholder="agent@agency.gov" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Access Passkey</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-cyan w-100" id="auth-submit-btn">
+                    Authorize Access
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p id="toggle-text">New Agent? <a href="#" id="auth-toggle">Request Credentials</a></p>
+                <a href="index.html" class="back-home">← Return to Public Terminal</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

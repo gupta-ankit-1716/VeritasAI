@@ -1,0 +1,58 @@
+.tech-hero {
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+}
+
+.tech-hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; }
+.tech-hero p { color: var(--slate); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+
+.tech-stack {
+    max-width: 1100px;
+    margin: 0 auto 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.tech-card {
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+.tech-card:hover {
+    border-color: var(--cyan);
+    background: rgba(0, 232, 255, 0.02);
+}
+
+.layer-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.tech-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--white); }
+.tech-card p { color: var(--slate); line-height: 1.7; font-size: 0.95rem; margin-bottom: 2rem; }
+
+.tech-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--slate);
+}
+
+.cta-bottom {
+    text-align: center;
+    padding: 10rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.cta-bottom h2 { font-size: 2.5rem; margin-bottom: 2rem; }

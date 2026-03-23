@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & API | VeritasAI</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pricing.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="logo">VERITAS<span>AI</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" class="btn-cyan">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="pricing-hero">
+        <h1 class="glitch">Scaling Truth.</h1>
+        <p>Choose the forensic capacity that fits your organization's needs.</p>
+    </section>
+
+    <div class="pricing-grid">
+        <div class="price-card glass">
+            <div class="plan-header">
+                <h3>Sentinel</h3>
+                <div class="price">$0<span>/mo</span></div>
+                <p>For independent researchers.</p>
+            </div>
+            <ul class="features">
+                <li><i data-lucide="check"></i> 5 Scans per month</li>
+                <li><i data-lucide="check"></i> Image Forensics</li>
+                <li><i data-lucide="check"></i> Standard Priority</li>
+                <li class="disabled"><i data-lucide="x"></i> Batch Processing</li>
+            </ul>
+            <a href="auth.html" class="btn-outline">Current Plan</a>
+        </div>
+
+        <div class="price-card glass featured">
+            <div class="popular-badge">Most Popular</div>
+            <div class="plan-header">
+                <h3>Inquisitor</h3>
+                <div class="price">$49<span>/mo</span></div>
+                <p>For security professionals.</p>
+            </div>
+            <ul class="features">
+                <li><i data-lucide="check"></i> 100 Scans per month</li>
+                <li><i data-lucide="check"></i> Full Video Analysis</li>
+                <li><i data-lucide="check"></i> Metadata Restoration</li>
+                <li><i data-lucide="check"></i> Priority Neural Nodes</li>
+            </ul>
+            <a href="#" class="btn-cyan">Upgrade to Pro</a>
+        </div>
+
+        <div class="price-card glass">
+            <div class="plan-header">
+                <h3>Oracle</h3>
+                <div class="price">Custom</div>
+                <p>For institutional integrity.</p>
+            </div>
+            <ul class="features">
+                <li><i data-lucide="check"></i> Unlimited Scanning</li>
+                <li><i data-lucide="check"></i> Full API Access</li>
+                <li><i data-lucide="check"></i> Custom Neural Training</li>
+                <li><i data-lucide="check"></i> 24/7 Forensic Support</li>
+            </ul>
+            <a href="#" class="btn-outline">Contact Sales</a>
+        </div>
+    </div>
+
+    
+    <div class="chat-widget" onclick="alert('Agent Assigned: Connecting to Forensic Support...')">
+    <i data-lucide="message-square"></i>
+    </div>
+    <script>lucide.createIcons();</script>
+
+    <script src="pricing.js"></script>
+</body>
+</html>

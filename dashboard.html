@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensic Lab | VeritasAI</title>
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+    // IRONCLAD GATEKEEPER: Check session BEFORE the page even renders
+    if (!localStorage.getItem('veritas_user')) {
+        window.location.href = './auth.html';
+    }
+    </script>
+
+</head>
+<body class="dashboard-body">
+    <nav class="glass-nav">
+        <div class="logo">VERITAS<span>AI</span></div>
+        <div class="user-status">
+            <span class="pulse-icon"></span>
+            <span class="font-mono">SECURE_SESSION: ACTIVE</span>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="nav-group">
+                <div class="nav-item active" id="nav-scan"><i data-lucide="scan"></i> New Analysis</div>
+                <div class="nav-item" id="nav-history"><i data-lucide="database"></i> Scan History</div>
+                <div class="nav-item" id="nav-reports"><i data-lucide="shield-check"></i> Integrity Reports</div>
+                <div class="nav-item" id="nav-settings"><i data-lucide="settings"></i> Lab Settings</div>
+            </div>
+            <div class="nav-item logout" id="logout-btn">
+                <i data-lucide="log-out"></i> Terminate Session
+            </div>
+        </aside>
+
+        <main class="main-stage">
+            <header class="stage-header">
+                <div class="header-info">
+                    <h1>Media Forensic Lab</h1>
+                    <p>Uptime: <span id="session-timer" class="font-mono">00:00:00</span></p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <small>API Credits</small>
+                        <span>98/100</span>
+                    </div>
+                    <div class="stat-item">
+                        <small>Avg Precision</small>
+                        <span>99.8%</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="upload-box glass" id="drop-zone">
+                <div class="upload-content">
+                    <i data-lucide="upload-cloud" class="upload-icon"></i>
+                    <h3>Initialize Forensic Analysis</h3>
+                    <p>Drag media source here or click to browse (MP4, PNG, JPG)</p>
+                    <input type="file" id="file-input" hidden>
+                    <button class="btn-cyan" onclick="document.getElementById('file-input').click()">Select Source</button>
+                </div>
+            </section>
+
+             <section id="analysis-state" class="hidden">
+                <div class="analysis-grid">
+                    <div class="analysis-card glass">
+                        <div class="scanning-line"></div>
+                        <h3 id="status-msg">Booting Neural Engines...</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-fill" id="progress-bar"></div>
+                        </div>
+                        <p class="font-mono" style="margin-top: 15px; font-size: 0.8rem; color: #00E8FF;">SCANNING_BLOCK_0492...</p>
+                    </div>
+
+                    <div class="terminal-container glass">
+                        <div class="terminal-header">
+                            <i data-lucide="terminal" style="width: 14px;"></i>
+                            <span>FORENSIC_LOG_STREAM</span>
+                        </div>
+                        <div class="terminal-body font-mono" id="terminal-log">
+                            <div class="log-line">>> Initializing connection to Veritas_V3_Node...</div>
+                        </div>
+                    </div>
+                </div>
+              </section>
+
+            <section id="results-state" class="hidden">
+                <div class="result-card glass">
+                    <div class="result-score">
+                        <span id="confidence-val">--%</span>
+                        <small>Confidence</small>
+                    </div>
+                    <div class="result-details">
+                        <h2 id="verdict-text">Verifying...</h2>
+                        <p id="forensic-note">Temporal inconsistencies detected in frame sequence. Metadata indicates synthetic generation via GAN-based framework.</p>
+                        <button class="btn-cyan" onclick="location.reload()">New Analysis</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <h3>Recent Forensic Reports</h3>
+                <div class="table-container glass">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Source Name</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Verdict</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-body">
+                            <tr>
+                                <td>Deepfake_Test_04.mp4</td>
+                                <td>Video</td>
+                                <td><span class="status-badge">Completed</span></td>
+                                <td class="text-red">Deepfake Detected</td>
+                                <td>Mar 23, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="chat-widget" onclick="alert('Agent Assigned: Connecting to Forensic Support...')">
+    <i data-lucide="message-square"></i>
+    </div>
+    <script>lucide.createIcons();</script>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

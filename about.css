@@ -1,0 +1,50 @@
+.ethics-hero {
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+    background: radial-gradient(circle at bottom, rgba(0, 232, 255, 0.05), transparent);
+}
+
+.ethics-hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.ethics-hero p { color: var(--slate); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+.manifesto-content {
+    max-width: 900px;
+    margin: 0 auto 10rem;
+    padding: 0 2rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.pillar {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 24px;
+    align-items: flex-start;
+}
+
+.pillar-icon {
+    background: rgba(0, 232, 255, 0.1);
+    color: var(--cyan);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pillar h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--white); }
+.pillar p { color: var(--slate); line-height: 1.8; font-size: 1rem; }
+
+.ethics-footer {
+    text-align: center;
+    padding-bottom: 5rem;
+    color: var(--slate);
+}
+
+.ethics-footer a { color: var(--cyan); text-decoration: none; }
+
+@media (max-width: 768px) {
+    .pillar { flex-direction: column; text-align: center; }
+    .pillar-icon { margin: 0 auto; }
+}
